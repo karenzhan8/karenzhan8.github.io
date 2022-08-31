@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Home | Karen Zhan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<style>
+		#nav {
+			background: none;
+			text-align: right;
+		}
+		#nav a {
+			color: white;
+			opacity: 0.7;
+		}
+		#nav ul li a:hover{
+			background: none;
+			color: white;
+			
+			opacity: 1;
+		}
+		#nav ul li a.active {
+			color: white;
+			background: none;
+		}
+		.content {
+			text-align: left;
+		}
+
+		#footer {
+			animation: fadeIn 5s;
+		}
+		@keyframes fadeIn {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+
+	</style>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html" class="active">About Me</a></li>
+						<li><a href="projects.html">Projects</a></li>
+					</ul>
+				</nav>
+
+				<!-- Header -->
+					<header id="header"  class="alt">
+						<div class="spotlight">
+							<div class="content">
+								<header class="major">
+									<h1 class="h2">I'm Karen.</h1>
+								</header>
+								<p>I'm a student at Western University, pursuing a dual degree in Computer Science 
+									and Honours Business Administration from the Ivey School of Business.</p>
+								<ul class="icons">
+									<li><a href="mailto:kzhan.hba2024@ivey.ca" class="icon fa-envelope alt"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://www.linkedin.com/in/karenzhan/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/karenzhan8/" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								</ul>
+							</div>
+							<span class="image"><img src="images/headshot.jpg" alt="" /></span>
+						</div>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Let's chat!</h2>
+							<dl class="alt">
+								<dt>Email</dt>
+								<dd><a href="mailto:kzhan.hba2024@ivey.ca">kzhan.hba2024@ivey.ca</a></dd>
+							</dl>
+						</section>
+						<section>
+							<h2>Connect with Me</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/karenzhan/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/karenzhan8/" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				document.addEventListener('DOMContentLoaded',function(event){
+					var dataText = [ "Hi!", "Nice to meet you!", "I'm Karen."];
+					
+					function typeWriter(text, i, fnCallback) {
+						if (i < (text.length)) {
+							document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+							setTimeout(function() {
+								typeWriter(text, i + 1, fnCallback)
+							}, 100);
+						}
+						else if (typeof fnCallback == 'function') {
+							setTimeout(fnCallback, 700);
+						}
+					}
+					
+				   function StartAnimation(i) {
+					   if (i < dataText[i].length) {
+						   typeWriter(dataText[i], 0, function(){
+							   StartAnimation(i + 1);
+						   });
+					   }
+				   }
+					
+				  StartAnimation(0);
+				});
+			</script>
+
+	</body>
+</html>
